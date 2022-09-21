@@ -13,7 +13,7 @@
                     <h2>Parking Permit Laravel Dashboard</h2>
                 </div>
                 <div class="pull-right mb-2">
-                    <a class="btn btn-success" href="{{ route('plates.create') }}"> Create plate</a>
+                    <a class="btn btn-success" href="{{ route('plate.create') }}"> Create plate</a>
                 </div>
             </div>
         </div>
@@ -40,8 +40,8 @@
                         <td>{{ $plate->start_date }}</td>
                         <td>{{ $plate->end_date }}</td>
                         <td>
-                            <form action="{{ route('plates.destroy',$plate->id) }}" method="Post">
-                                <a class="btn btn-primary" href="{{ route('plates.edit',$plate->id) }}">Edit</a>
+                            <form action="{{ route('plate.destroy',$plate->id) }}" method="Post">
+                                <a class="btn btn-primary" href="{{ route('plate.edit',$plate->id) }}">Edit</a>
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Delete</button>

@@ -14,10 +14,10 @@ use App\Http\Controllers\PlateController;
 |
 */
 
-Route::resource('plates', PlateController::class);
+Route::resource('plate', PlateController::class);
 
-Route::redirect('/', 'plates');
-/*
+Route::redirect('/', 'plate');
+
 Route::get('/', function () {
-    return route('plates.index');
-});*/
+    return view('plate.create');
+});

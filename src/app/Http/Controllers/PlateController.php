@@ -15,7 +15,7 @@ class PlateController extends Controller
     public function index()
     {
         $plates = Plate::orderBy('id','desc')->paginate(5);
-        return view('plates.index', compact('plates'));
+        return view('plate.index', compact('plates'));
     }
 
     /**
@@ -25,7 +25,7 @@ class PlateController extends Controller
     */
     public function create()
     {
-        return view('plates.create');
+        return view('plate.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class PlateController extends Controller
         
         Plate::create($request->post());
 
-        return redirect()->route('plates.index')->with('success','Plate has been created successfully.');
+        return redirect()->route('plate.index')->with('success','Plate has been created successfully.');
     }
 
     /**
@@ -58,7 +58,7 @@ class PlateController extends Controller
     */
     public function show(Plate $plate)
     {
-        return view('plates.show',compact('plate'));
+        return view('plate.show',compact('plate'));
     }
 
     /**
@@ -69,7 +69,7 @@ class PlateController extends Controller
     */
     public function edit(Plate $plate)
     {
-        return view('plates.edit',compact('plate'));
+        return view('plate.edit',compact('plate'));
     }
 
     /**
@@ -92,7 +92,7 @@ class PlateController extends Controller
         
         $plate->fill($request->post())->save();
 
-        return redirect()->route('plates.index')->with('success','Plate Has Been updated successfully');
+        return redirect()->route('plate.index')->with('success','Plate Has Been updated successfully');
     }
 
     /**
@@ -104,6 +104,6 @@ class PlateController extends Controller
     public function destroy(Plate $plate)
     {
         $plate->delete();
-        return redirect()->route('plates.index')->with('success','Plate has been deleted successfully');
+        return redirect()->route('plate.index')->with('success','Plate has been deleted successfully');
     }
 }
