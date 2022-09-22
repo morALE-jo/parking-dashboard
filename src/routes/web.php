@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PlateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +13,11 @@ use App\Http\Controllers\PlateController;
 |
 */
 
-Route::resource('plate', PlateController::class);
+Route::view('/', view:'dashboard')
+    ->name('dashboard');
+/*
+Route::view('/{any}', view:'dashboard')
+    ->name('dashboard')
+    ->where('any', '.*');*/
 
-Route::redirect('/', 'plate');
+//Route::get('/api/plate', [\App\Http\Controllers\Api\PlateController::class, 'index']);
