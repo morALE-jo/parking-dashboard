@@ -17,7 +17,3 @@ use App\Http\Controllers\PlateController;
 Route::resource('plate', PlateController::class);
 
 Route::redirect('/', 'plate');
-
-Route::get('/', function () {
-    return view('plate.create');
-});

@@ -2,18 +2,18 @@ FROM php:8.1-apache
 
 RUN apt update
 RUN apt install -y \
-            g++ \
-            libicu-dev \
-            libpq-dev \
-            libzip-dev \
-            zip \
-            zlib1g-dev
+        g++ \
+        libicu-dev \
+        libpq-dev \
+        libzip-dev \
+        zip \
+        zlib1g-dev
 RUN docker-php-ext-install \
-            intl \
-            opcache \
-            pdo \
-            pdo_pgsql \
-            pgsql 
+        intl \
+        opcache \
+        pdo \
+        pdo_pgsql \
+        pgsql 
 
 WORKDIR /var/www/laravel_docker
 
